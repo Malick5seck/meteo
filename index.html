@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="fas fa-cloud-sun"></i> Météo Live</h1>
+            <p class="app-subtitle">La météo en temps réel partout dans le monde</p>
+        </header>
+
+        <main class="app-main">
+            <div class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" 
+                               id="cityInput" 
+                               placeholder="Rechercher une ville..." 
+                               value="Paris">
+                        <button id="searchBtn" class="btn-search">
+                            <i class="fas fa-search"></i> Rechercher
+                        </button>
+                    </div>
+                    <button id="locationBtn" class="btn-location">
+                        <i class="fas fa-location-arrow"></i> Ma position
+                    </button>
+                </div>
+                
+                <div class="unit-toggle">
+                    <span>Unités :</span>
+                    <button class="unit-btn active" data-unit="metric">°C</button>
+                    <button class="unit-btn" data-unit="imperial">°F</button>
+                </div>
+                
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="current-weather-section">
+                    <div id="loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Chargement des données météo...</p>
+                    </div>
+
+                    <div id="currentWeather" class="current-weather">
+                        <!-- Les données actuelles seront insérées ici -->
+                    </div>
+                </div>
+
+                <div class="additional-info">
+                    <div class="info-card favorites-card">
+                        <h3><i class="fas fa-star"></i> Villes favorites</h3>
+                        <div class="favorites-list" id="favoritesList">
+                            <!-- Villes favorites -->
+                        </div>
+                        <div class="favorite-form">
+                            <input type="text" id="favoriteInput" placeholder="Ajouter une ville favorite">
+                            <button id="addFavoriteBtn" class="btn-favorite" type="button" title="Ajouter une ville favorite">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="info-card details-card">
+                        <h3><i class="fas fa-info-circle"></i> Détails</h3>
+                        <div class="details-grid" id="weatherDetails">
+                            <!-- Détails météo -->
+                        </div>
+                    </div>
+
+                    <div class="info-card forecast-card">
+                        <h3><i class="fas fa-calendar-alt"></i> Prévisions 5 jours</h3>
+                        <div class="forecast-container" id="forecastContainer">
+                            <!-- Prévisions -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Application météo utilisant l'API OpenWeatherMap</p>
+            <p class="copyright">© 2026 Projet JavaScript - Weather App</p>
+        </footer>
+    </div>
+
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
