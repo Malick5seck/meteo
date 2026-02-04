@@ -23,6 +23,7 @@
     --dark-color: #f8f9fa;
     --card-bg: rgba(30, 30, 46, 0.95);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --primary-color: #5a7dff;
 }
 
 body {
@@ -224,41 +225,21 @@ h1 {
 .city-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .city-name {
     font-size: 2.2rem;
     color: var(--dark-color);
-}
-
-.city-name small {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    background: rgba(67, 97, 238, 0.1);
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-left: 10px;
-}
-
-.favorite-btn {
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--warning-color);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.favorite-btn:hover {
-    transform: scale(1.2);
+    line-height: 1;
 }
 
 .date-time {
     color: var(--dark-color);
     opacity: 0.8;
-    margin-bottom: 30px;
     font-size: 1.1rem;
 }
 
@@ -268,6 +249,7 @@ h1 {
     justify-content: space-between;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .temperature-section {
@@ -285,6 +267,7 @@ h1 {
     color: var(--dark-color);
     opacity: 0.8;
     font-size: 1.1rem;
+    margin-top: 5px;
 }
 
 .weather-icon-container {
@@ -292,12 +275,9 @@ h1 {
 }
 
 .weather-icon {
-    width: 120px;
-    height: 120px;
+    font-size: 80px;
     margin: 0 auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    line-height: 1;
 }
 
 .weather-description {
@@ -336,6 +316,7 @@ h1 {
     margin-bottom: 20px;
     max-height: 200px;
     overflow-y: auto;
+    padding-right: 5px;
 }
 
 .favorite-item {
@@ -354,9 +335,8 @@ h1 {
     background: rgba(67, 97, 238, 0.1);
 }
 
-.favorite-item .temp {
-    font-weight: 600;
-    color: var(--primary-color);
+.favorite-item span {
+    font-weight: 500;
 }
 
 .remove-favorite {
@@ -364,12 +344,19 @@ h1 {
     border: none;
     color: var(--danger-color);
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
+    border-radius: 50%;
 }
 
 .remove-favorite:hover {
-    transform: scale(1.2);
+    background: rgba(239, 68, 68, 0.1);
+    transform: scale(1.1);
 }
 
 .favorite-form {
@@ -526,6 +513,7 @@ h1 {
     box-shadow: var(--shadow);
     transition: var(--transition);
     z-index: 100;
+    color: var(--dark-color);
 }
 
 .theme-toggle:hover {
@@ -591,6 +579,11 @@ h1 {
     .forecast-temp {
         flex-direction: column;
         gap: 2px;
+    }
+
+    .city-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
